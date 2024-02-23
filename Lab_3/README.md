@@ -1,6 +1,6 @@
-# Lab_3 Project
+# Lab 3
 
-This project consists of three files: `worker.h`, `worker.cpp`, and `main.cpp`, which collectively demonstrate a multithreading scenario in C++ using Windows API. The purpose is to illustrate thread synchronization and communication using events and critical sections.
+This project consists of three files: `worker.h`, `worker.cpp`, and `main.cpp`, which collectively implements a solution for the third lab work.
 
 ## Files
 
