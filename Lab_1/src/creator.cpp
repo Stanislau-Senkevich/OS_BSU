@@ -2,17 +2,17 @@
 #include <fstream>
 #include "employee.h"
 
-void getRecord(employee* record, int i) {
-    std::cout << "Employee " << (i + 1) << ":\n";
-    std::cout << "Enter ID: ";
-    std::cin >> record->ID;
-    std::cout << "\n";
-    std::cout << "Enter name: ";
-    std::cin >> record->name;
-    std::cout << "\n";
-    std::cout << "Enter hours: ";
-    std::cin >> record->hours;
-    std::cout << "\n";
+void getRecord(employee* record, int i, std::istream& input, std::ostream& output) {
+    output << "Employee " << (i + 1) << ":\n";
+    output << "Enter ID: ";
+    input >> record->ID;
+    output << "\n";
+    output << "Enter name: ";
+    input >> record->name;
+    output << "\n";
+    output << "Enter hours: ";
+    input >> record->hours;
+    output << "\n";
 }
 
 int main(int argc, char* argv[])
