@@ -2,17 +2,7 @@
 #include <fstream>
 #include <string>
 #include "windows.h"
-
-void sendMsg(std::string message, const std::string& binFileName, std::ofstream& binOutputStream, int MESSAGE_LENGTH, char* messageCharset, HANDLE* hReadAccessSemaphore) {
-    std::cout << "Input message: "; std::cin >> message;
-    for (std::size_t i = 0; i < MESSAGE_LENGTH; i++)
-        messageCharset[i] = '_';
-    message.copy(messageCharset, message.length());
-    binOutputStream.open(binFileName, std::ios::binary | std::ios::app);
-    binOutputStream.write((char*)&messageCharset, sizeof(messageCharset));
-    binOutputStream.close();
-    ReleaseSemaphore(hReadAccessSemaphore, 1, nullptr);
-}
+#include "sendMsg.h"
 
 int main(int argc, char* argv[]) {
     std::ofstream   binOutputStream;
