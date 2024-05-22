@@ -1,41 +1,87 @@
 # Lab 2
 
-This lab demonstrates multi-threaded array operations using C++ on Windows. The program calculates the minimum, maximum, and average of an array of integers concurrently using separate threads.
+This lab project demonstrates the usage of a multi-threaded application in C++ with unit tests using Google Test.
 
-## Files
+## Project Structure
 
-- `parameters.h`: Header file containing struct definitions for parameter passing.
-- `main.cpp`: Main C++ source code file implementing multi-threaded array operations.
+```plaintext
+.
+├── CMakeLists.txt          # CMake configuration file
+├── docs
+│   └── Task.pdf            # Lab task documentation
+├── googletest              # Google Test source code
+├── include
+│   └── parameters.h        # Header files
+├── README.md               # Project README file
+├── src
+│   ├── main.cpp            # Main source file
+│   └── parameters.cpp      # Source file for parameters component
+└── tests
+    ├── CMakeLists.txt      # CMake configuration for tests
+    └── tests.cpp           # Unit tests
+```
 
-## Requirements
+## Building the Project
 
-- Windows operating system.
-- C++ compiler that supports C++11 standard.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Stanislau-Senkevich/OS_BSU.git
+    cd Lab_2
+    ```
 
-## How to Run
+2. **Create a build directory:**
+    ```bash
+    mkdir build
+    cd build
+    ```
 
-1. Compile the `main.cpp` file using a C++ compiler.
-2. Run the compiled executable.
+3. **Configure the project using CMake:**
+    ```bash
+    cmake ..
+    ```
 
-## Description
+4. **Build the project:**
+    ```bash
+    cmake --build .
+    ```
 
-### `parameters.h`
+## Running the Tests
 
-Contains struct definitions for parameter passing between threads.
+1. **Run the tests using CTest:**
+    ```bash
+    ctest
+    ```
 
-- `minMaxParameters`: Struct holding parameters for calculating minimum and maximum values.
-- `sumParameters`: Struct holding parameters for calculating the average.
+2. **Alternatively, you can run the test executable directly:**
+    ```bash
+    ./tests/runUnitTests
+    ```
 
-### `main.cpp`
+## Project Components
 
-- Includes necessary headers.
-- Defines global constants for sleep durations.
-- Implements `min_max` function for calculating minimum and maximum values concurrently.
-- Implements `average` function for calculating the average concurrently.
-- Defines `updateArray` function to update the array based on calculated values.
-- Implements `main` function:
-    - Prompts the user to enter the size of the array and the integers.
-    - Creates threads for calculating minimum and maximum values (`min_max`) and the average (`average`).
-    - Waits for threads to finish execution.
-    - Updates the array with calculated values.
-    - Prints the original and updated arrays.
+### Source Files
+
+- `src/main.cpp`: The main entry point for the application.
+- `src/parameters.cpp`: Contains the implementation for the parameters component.
+
+### Header Files
+
+- `include/parameters.h`: Header file defining structures and functions related to parameters.
+
+### Tests
+
+- `tests/tests.cpp`: Contains the unit tests for the project using Google Test.
+
+### Documentation
+
+- `docs/Task.pdf`: Contains detailed task description and requirements for the lab project.
+
+## Dependencies
+
+- **CMake**: Used for project configuration and build management.
+- **Google Test**: Used for unit testing the project.
+
+## Notes
+
+- Ensure you have the necessary development tools installed, such as a C++ compiler, CMake, and Google Test.
+- The project assumes a Windows environment due to the usage of Windows-specific APIs.
